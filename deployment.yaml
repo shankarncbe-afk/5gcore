@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-practice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-practice
+  template:
+    metadata:
+      labels:
+        app: nginx-practice
+    spec:
+      containers:
+      - name: nginx-container
+        image: shan2711/devops-eks-practice:v1
+        ports:
+        - containerPort: 80
